@@ -13,7 +13,7 @@ from gtts import gTTS
 #kk.loginResult()
 
 cl = Aan.LINE()
-cl.login(token="EoiXphYjgGHigdOdAIAe.rWbQH0AqM/67F83f0OdD7G.n97P9DLZ20KPcArxmEOAn7v1aj5gkgamTWDvnGb/4yI=")
+cl.login(token="Eof9Z9nmwSmUqHIz5sIe.rWbQH0AqM/67F83f0OdD7G.Fj8Uqg+VYkascjm/PLTtAP2vvPEimrrOfHSgYSBT8JI=")
 cl.loginResult()
 
 cl
@@ -987,6 +987,11 @@ def bot(op):
             elif msg.text in ["/help"]:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,helpMessage)
+                else:
+                    cl.sendText(msg.to,helpt)
+            elif msg.text in ["Rakko help"]:
+                if wait["lang"] == "JP":
+                    cl.sendText(msg.to,rakkoMessage)
                 else:
                     cl.sendText(msg.to,helpt)
             elif msg.text in ["Set group"]:
