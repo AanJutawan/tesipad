@@ -61,13 +61,14 @@ A̩̥͎̫ͪ̕͜ͅa̟̙̦̘̺̍ͤͦ͌̅ͮn̻͕̳͎̾͋̄ͥ̊̾ͭ̓̓҉̶́͜͜ ̾
 ==>Aan jutawan: https://line.me/R/ti/p/%40iyv1920f<==
 _________________________________
 """
-rakkoMessage"""
+rakkoMessage ="""
 •••••••Rakko Menu ••••••••
 ☞Setlastpoint
 ☞Viewlastseen
 My creator:
         - https://line.me/R/ti/p/%40iyv1920f
-•••••• Rakko v11 ••••••••"""
+•••••• Rakko v11 ••••••••
+"""
 
 KAC=[cl]
 mid = cl.getProfile().mid
