@@ -67,7 +67,7 @@ rakkoMessage"""
 ☞Viewlastseen
 My creator:
         - https://line.me/R/ti/p/%40iyv1920f
-•••••• Rakko v11 ••••••••
+•••••• Rakko v11 ••••••••"""
 
 KAC=[cl]
 mid = cl.getProfile().mid
