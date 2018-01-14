@@ -54,7 +54,7 @@ class LINE:
     #self.obs_token = self.channel.obs_token
     #self.refresh_token = self.channel.refresh_token
     self._headers = {
-              'X-Line-Application': 'IOSIPAD\t7.18.0\tiPhone OS\t11.12.1',
+              'X-Line-Application': 'CHROMEOS 2.0.0 Chrome_OS 1',
               'X-Line-Access': self.authToken,
               'User-Agent': ' Line/7.18.0'
                }
