@@ -19,7 +19,7 @@ class Poll:
   port = 443;
 
   UA = " Line/7.18.0"
-  LA = "IOSIPAD\t7.18.0\tiPhone OS\t11.12.1"
+  LA = "CHROMEOS 2.0.0 Chrome_OS 1"
 
   rev = 0
 
