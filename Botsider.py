@@ -61,7 +61,13 @@ A̩̥͎̫ͪ̕͜ͅa̟̙̦̘̺̍ͤͦ͌̅ͮn̻͕̳͎̾͋̄ͥ̊̾ͭ̓̓҉̶́͜͜ ̾
 ==>Aan jutawan: https://line.me/R/ti/p/%40iyv1920f<==
 _________________________________
 """
-
+rakkoMessage"""
+•••••••Rakko Menu ••••••••
+☞Setlastpoint
+☞Viewlastseen
+My creator:
+        - https://line.me/R/ti/p/%40iyv1920f
+•••••• Rakko v11 ••••••••
 
 KAC=[cl]
 mid = cl.getProfile().mid
@@ -223,6 +229,29 @@ def bot(op):
                     pass
                 else:
                     cl.sendText(op.param1,str(wait["message"]))
+        if op.type == 55:
+            try:
+                if op.param1 in wait2['readPoint']:
+           
+                    if op.param2 in wait2['readMember'][op.param1]:
+                        pass
+                    else:
+                        wait2['readMember'][op.param1] += op.param2
+                    wait2['ROM'][op.param1][op.param2] = op.param2
+                    with open('sider.json', 'w') as fp:
+                     json.dump(wait2, fp, sort_keys=True, indent=4)
+                else:
+                    pass
+            except:
+                pass    
+#-------------------NOTIFIED_READ_MESSAGE----------------
+        if op.type == 55:
+	    try:
+	      group_id = op.param1
+	      user_id=op.param2
+	      subprocess.Popen('echo "'+ user_id+'|'+str(op.createdTime)+'" >> dataSeen/%s.txt' % group_id, shell=True, stdout=subprocess.PIPE, )
+	    except Exception as e:
+	      print e
 
         #------Protect Group Kick start------#
         if op.type == 11:
@@ -2045,6 +2074,47 @@ def bot(op):
                 msg.contentMetadata = {'mid': 'u84e571575c1f7fe8bda071470a4511a0'}
                 cl.sendMessage(msg)
                 cl.sendText(msg.to,"Itu Creator Saya ")
+#-------Cek sider biar mirip kek siri-----------------------------
+            elif "Setlastpoint" in msg.text:
+                subprocess.Popen("echo '' > dataSeen/"+msg.to+".txt", shell=True, stdout=subprocess.PIPE)
+                #cl.sendText(msg.to, "Checkpoint checked!")
+                cl.sendText(msg.to, "Set the lastseens' point(｀・ω・´)\n\n" + datetime.now().strftime('%H:%M:%S'))
+                print "Setlastpoint"
+
+            elif "Viewlastseen" in msg.text:
+	        lurkGroup = ""
+	        dataResult, timeSeen, contacts, userList, timelist, recheckData = [], [], [], [], [], []
+                with open('dataSeen/'+msg.to+'.txt','r') as rr:
+                    contactArr = rr.readlines()
+                    for v in xrange(len(contactArr) -1,0,-1):
+                        num = re.sub(r'\n', "", contactArr[v])
+                        contacts.append(num)
+                        pass
+                    contacts = list(set(contacts))
+                    for z in range(len(contacts)):
+                        arg = contacts[z].split('|')
+                        userList.append(arg[0])
+                        timelist.append(arg[1])
+                    uL = list(set(userList))
+                    for ll in range(len(uL)):
+                        try:
+                            getIndexUser = userList.index(uL[ll])
+                            timeSeen.append(time.strftime("%d日 %H:%M:%S", time.localtime(int(timelist[getIndexUser]) / 1000)))
+                            recheckData.append(userList[getIndexUser])
+                        except IndexError:
+                            conName.append('nones')
+                            pass
+                    contactId = cl.getContacts(recheckData)
+                    for v in range(len(recheckData)):
+                        dataResult.append(contactId[v].displayName + ' ('+timeSeen[v]+')')
+                        pass
+                    if len(dataResult) > 0:
+                        grp = '\n• '.join(str(f) for f in dataResult)
+                        total = '\nThese %iuesrs have seen at the lastseen\npoint(｀・ω・´)\n\n%s' % (len(dataResult), datetime.now().strftime('%H:%M:%S') )
+                        cl.sendText(msg.to, "• %s %s" % (grp, total))
+                    else:
+                        cl.sendText(msg.to, "Sider ga bisa di read cek setpoint dulu bego tinggal ketik\nSetlastpoint\nkalo mau liat sider ketik\nViewlastseen")
+                    print "Viewlastseen"
 	    elif msg.text in ["/gcreator"]:
               if msg.toType == 2:
                     msg.contentType = 13
