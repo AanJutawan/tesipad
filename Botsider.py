@@ -13,7 +13,7 @@ from gtts import gTTS
 #kk.loginResult()
 
 cl = Aan.LINE()
-cl.login(token="Eof9Z9nmwSmUqHIz5sIe.rWbQH0AqM/67F83f0OdD7G.Fj8Uqg+VYkascjm/PLTtAP2vvPEimrrOfHSgYSBT8JI=")
+cl.login(token="EoAj4nPtqTi18wOVIaXb.HWiMCk4bKGyZo2+ly0uMcW.sYZWlZW2dcY8+0IQZGVUGyZ1s3Efjw9TpftAXRJ9kdM=")
 cl.loginResult()
 
 cl
