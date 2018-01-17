@@ -18,8 +18,8 @@ class Poll:
   host = "gd2.line.naver.jp";
   port = 443;
 
-  UA = " Line/7.18.0"
-  LA = "CHROMEOS 2.0.0 Chrome_OS 1"
+  UA = " Line/6.0.0 iPad4,1 9.0.2"
+  LA = "DESKTOPMAC 10.10.2-YOSEMITE-x64    MAC 4.5.0"
 
   rev = 0
 
