@@ -1,1 +1,1 @@
-git clone github.com/Giananda/Aa
+My creator: http://line.me/ti/p/~alrahmantoganteng
